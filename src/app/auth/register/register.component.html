@@ -1,0 +1,18 @@
+<div class="login-container">
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+      <h2>Register Form</h2>
+      <label for="userName">Enter a Username</label>
+      <input id="userName" formControlName="userName" />
+      <div *ngIf="userNameExists">Username already exists!</div>
+    
+      <label for="name">Enter your Full Name</label>
+      <input id="name" formControlName="name" />
+      <label for="email">Enter your Email address</label>
+      <input id="email" formControlName="email" type="email"/>
+      <label for="password">Password</label>
+      <input id="password" type="password" formControlName="password" />
+    <br><br>
+      <button type="submit" [disabled]="registerForm.invalid"  class="btn-submit">Register</button>
+    </form><br>
+    <button routerLink="/auth/login"  class="btn-submit">Login</button>
+  </div>

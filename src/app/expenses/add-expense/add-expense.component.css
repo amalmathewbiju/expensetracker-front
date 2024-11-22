@@ -1,0 +1,131 @@
+/* Style for the heading */
+h2 {
+    font-size: 24px;
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  /* Style for the form */
+  form {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Style for labels */
+  form label {
+    display: block;
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 10px;
+  }
+  
+  /* Style for input fields */
+  form input[type="text"],
+  form input[type="number"],
+  form input[type="date"],
+  form select {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    box-sizing: border-box;
+    transition: border-color 0.3s;
+  }
+  
+  /* Input focus effect */
+  form input[type="text"]:focus,
+  form input[type="number"]:focus,
+  form input[type="date"]:focus,
+  form select:focus {
+    border-color: #5b9bd5;
+    outline: none;
+  }
+  
+  /* Style for the submit button */
+  form button[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #5b9bd5;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: background-color 0.3s;
+  }
+  
+  /* Submit button hover effect */
+  form button[type="submit"]:hover {
+    background-color: #4174a3;
+  }
+  /* Dropdown Container */
+.custom-dropdown {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+/* Dropdown Toggle Button */
+.dropdown-toggle {
+  width: 100%;
+  padding: 8px;
+  font-size: 14px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  cursor: pointer;
+  text-align: left;
+}
+
+/* Dropdown List */
+.dropdown-list {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  max-height: 200px;
+  overflow-y: auto;
+  z-index: 1;
+}
+
+/* Dropdown List Items */
+.dropdown-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px;
+  cursor: pointer;
+}
+
+/* Hover Effect for Dropdown Items */
+.dropdown-list li:hover {
+  background-color: #f1f1f1;
+}
+
+/* Edit and Delete Buttons */
+.dropdown-list button {
+  background: none;
+  border: none;
+  color: #5b9bd5;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 0 5px;
+  transition: color 0.3s;
+}
+
+/* Hover Effect for Edit/Delete Buttons */
+.dropdown-list button:hover {
+  color: #4174a3;
+}

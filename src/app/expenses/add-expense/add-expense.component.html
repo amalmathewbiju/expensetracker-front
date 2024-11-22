@@ -1,0 +1,61 @@
+<h2>Add Expense</h2>
+<form [formGroup]="expenseForm" (ngSubmit)="onSubmit()">
+  <label>Name:</label>
+  <input formControlName="name" type="text" placeholder="Enter expense name">
+
+  <label>Amount:</label>
+  <input formControlName="amount" type="number" placeholder="Enter amount">
+
+  <label>Date:</label>
+  <input formControlName="date" type="date">
+
+  <label>Payment:</label>
+  <input formControlName="payment" type="text">
+
+  <label>Category:</label>
+  <div class="custom-dropdown">
+    <!-- Display selected category -->
+    <button type="button" (click)="toggleDropdown()" class="dropdown-toggle">
+      {{ selectedCategory || 'Select Category' }}
+    </button>
+
+    <!-- Dropdown options list -->
+    <ul *ngIf="dropdownOpen" class="dropdown-list">
+      <li *ngFor="let category of categories; let i = index">
+        <span (click)="selectCategory(category)">{{ category }}</span>
+        <button type="button" (click)="editCategory(i)">Edit</button>
+        <button type="button" (click)="deleteCategory(i)">Delete</button>
+      </li>
+    </ul>
+  </div>
+  <button type="button" (click)="addCategory()">+ Add New Category</button>
+
+  <label>Description:</label>
+  <input formControlName="description" type="text">
+
+  <button type="submit">Add Expense</button><br><br>
+  <div>
+    <input id="csvFile" type="file" accept=".csv" (change)="onFileSelect($event)" />
+  
+   <br>
+    <p><strong>Hint:</strong> Upload a CSV file with the following columns:</p>
+    
+    <a href="javascript:void(0)" (click)="toggleReadMore()">
+      <strong *ngIf="!isReadMoreVisible">Read More</strong>
+      <strong *ngIf="isReadMoreVisible">Read Less</strong>
+    </a>
+  
+    <div *ngIf="isReadMoreVisible">
+        Example: <br>
+        name,amount,date,payment,category,description <br>
+        - Rent,1200,2024-11-01,Online Transfer,Rent,Monthly apartment rent <br>
+        - Groceries,150,2024-11-05,Cash,Food,Weekly grocery shopping
+    </div>
+  </div>
+  
+  
+</form>
+
+
+
+
