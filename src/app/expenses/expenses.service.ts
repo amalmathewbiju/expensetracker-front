@@ -37,7 +37,7 @@ export class ExpensesService {
     return forkJoin(requests);
   }
   deleteExpense(_id: number) {
-    return this.http.delete(`/api/expenses/${_id}`); // Replace with your actual API endpoint
+    return this.http.delete(`${this.apiUrl}/${_id}`); // Replace with your actual API endpoint
   }
   
 }

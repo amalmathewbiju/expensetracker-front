@@ -35,7 +35,11 @@
 
   <button type="submit">Add Expense</button><br><br>
   <div>
-    <input id="csvFile" type="file" accept=".csv" (change)="onFileSelect($event)" />
+    <div class="file-upload-container">
+      <label for="csvFile" class="custom-file-upload">Upload CSV File</label>
+      <input id="csvFile" type="file" accept=".csv" (change)="onFileSelect($event)" />
+    </div>
+    
   
    <br>
     <p><strong>Hint:</strong> Upload a CSV file with the following columns:</p>

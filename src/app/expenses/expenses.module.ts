@@ -9,6 +9,8 @@ import { MatInputModule } from '@angular/material/input';
 import { NgxCsvParserModule } from 'ngx-csv-parser';
 import { ExpensesListComponent } from './expenses-list/expenses-list.component';
 import { AddExpenseComponent } from './add-expense/add-expense.component';
+import { MatIconButton } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,7 @@ import { AddExpenseComponent } from './add-expense/add-expense.component';
     MatPaginatorModule,
     MatSortModule,
     MatFormFieldModule,
-    MatInputModule,FormsModule,NgxCsvParserModule
+    MatInputModule,FormsModule,NgxCsvParserModule,MatIconButton,MatIconModule
   ],
   exports: [
     ExpensesListComponent,

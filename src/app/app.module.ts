@@ -7,17 +7,28 @@ import { AuthModule } from './auth/auth.module';
 import { LoginComponent } from './auth/login/login.component';
 import { DashboardModule } from './dashboard/dashboard.module';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { loadingInterceptor } from './loading.interceptor';
+import { LoadingService } from './loading.service';
+import { LoadingComponent } from './loading/loading.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LoadingComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,AuthModule,DashboardModule,
+    AppRoutingModule,AuthModule,DashboardModule
   ],
   providers: [
-    provideAnimationsAsync()
+    provideAnimationsAsync(),
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: loadingInterceptor,
+      multi: true
+    },
+    LoadingService
   ],
   bootstrap: [AppComponent]
 })

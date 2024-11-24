@@ -1,0 +1,81 @@
+/* dashboard.component.css */
+
+/* General body styling for the dashboard */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 20px;
+    color: #333;
+  }
+  
+  /* Center-align the welcome message and give it a professional style */
+  h2 {
+    text-align: center;
+    font-size: 2rem;
+    color: #000000;
+    margin: 60px;
+  }
+  
+  /* Styling for the navigation button */
+  button {
+    display: block;
+    margin: 10px auto;
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Hover effect for buttons */
+  button:hover {
+    background-color: #2980b9;
+  }
+  
+  /* Additional class styling for logout button */
+  .btn-submit {
+    background-color: #e74c3c;
+  }
+  
+  .btn-submit:hover {
+    background-color: #c0392b;
+  }
+  
+  /* Add spacing around embedded components */
+  app-add-expense{
+    display: block;
+    margin: 20px auto;
+    max-width: 600px;
+    padding: 15px;
+    background: #ffffff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+  }
+  app-expenses-list {
+    display: block;
+    margin: 20px auto;
+    padding: 20px;
+    background: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    max-width: 1200px;
+    overflow-x: auto;
+  }
+  
+  /* Make the layout responsive */
+  @media (max-width: 768px) {
+    button {
+      width: 90%;
+      font-size: 0.9rem;
+    }
+  
+    app-add-expense, app-expenses-list {
+      width: 90%;
+    }
+  }
+  

@@ -1,17 +1,45 @@
 /* You can add global styles to this file, and also import other style files */
+
+/* Background Gradient */
 body {
-  /* background-image: url('/assets/download.jpg'); */
-  background-image: url('/assets/money-2.webp');
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed; /* Ensures the background remains fixed during scrolling */
+  background: linear-gradient(to right, rgb(0, 255, 102), rgb(0, 183, 255));
+  padding: 20px;
 }
 
-html, body {
-  height: 100%;
+/* Container for content */
+.container {
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 100%;
+  max-width: 600px;
 }
 
-body {
-  margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
+/* Headings */
+h1, h2, h3 {
+  color: rgb(34, 34, 34);
 }
+
+/* Text */
+p {
+  color: rgb(85, 85, 85);
+}
+
+/* Button Styles */
+button {
+  background-color: rgb(34, 150, 243);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: rgb(28, 120, 200);
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
