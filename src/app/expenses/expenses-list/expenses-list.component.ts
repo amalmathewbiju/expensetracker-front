@@ -43,7 +43,7 @@ export class ExpensesListComponent implements OnInit {
 
        if (!data || data.length === 0) {
       
-      console.log('Expense User IDs:', data.map(expense => expense.userId));
+      
         console.warn('No expenses data received from the service.');
         return; // Early exit if no data is returned
        }

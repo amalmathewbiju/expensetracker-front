@@ -6,7 +6,8 @@ import { forkJoin, Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ExpensesService {
-  private apiUrl = 'http://localhost:3000/api/expenses'; // URL to the backend for expenses
+  private apiUrl = 'https://expensetracker-back.onrender.com/api/users/api/expenses';
+  ; // URL to the backend for expenses
 
   constructor(private http: HttpClient) {}
 

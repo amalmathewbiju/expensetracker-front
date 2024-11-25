@@ -30,7 +30,7 @@ export class RegisterComponent {
         this.userNameExists = true;
       } else {
         this.authService.register(this.registerForm.value).subscribe(response => {
-          console.log('User registered successfully', response);
+          
           alert("Successfully registered");
           this.router.navigate(['/auth/login']);
         }, error => {

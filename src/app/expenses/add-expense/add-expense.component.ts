@@ -166,7 +166,7 @@ export class AddExpenseComponent implements OnInit {
       ) {
         this.expensesService.addExpense(expense).subscribe({
           next: () => {
-            console.log('Expense imported:', expense);
+           
           },
           error: (error) => {
             console.error('Error adding expense from CSV:', error);

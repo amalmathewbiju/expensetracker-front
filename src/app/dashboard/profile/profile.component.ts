@@ -42,40 +42,8 @@ export class ProfileComponent implements OnInit {
  }
  }
 
-// onSaveChanges() {
-//   console.log('Save Changes button clicked'); // Debug log
-//   console.log('Form Valid:', this.profileForm.valid); // Check form validity
-//   console.log('Form Value:', this.profileForm.value); // Log form values
-
-//   if (this.profileForm.valid) {
-//     const updatedProfile = {
-//       ...this.currentUser,
-//       ...this.profileForm.getRawValue()
-//     };
-//     console.log('Updated Profile:', updatedProfile); // Log updated profile
-
-//     this.authService.updateProfile(this.currentUser._id, updatedProfile).subscribe({
-//       next: response => {
-//         console.log('Profile updated successfully:', response);
-//         alert('Profile updated successfully.');
-//         this.isEditMode = false; // Exit edit mode
-//         const { password, ...safeData } = updatedProfile;
-//         this.authService.updateLocalStorageUser(safeData);
-//       },
-//       error: err => {
-//         console.error('Error updating profile:', err);
-//         alert('Failed to update profile.');
-//       }
-//     });
-//   } else {
-//     console.log('Form is invalid'); // Log if the form is invalid
-//   }
-// }
 onSaveChanges() {
- console.log('Save Changes button clicked');
 
- console.log('Form Valid:', this.profileForm.valid);
-   console.log('Form Value:', this.profileForm.value);
   
    if (this.profileForm.valid) {
     const formValues = this.profileForm.getRawValue();
@@ -90,11 +58,10 @@ onSaveChanges() {
     };
   
   
-    console.log('Updated Profile:', updatedProfile);
   
     this.authService.updateProfile(this.currentUser._id, updatedProfile).subscribe({
     next: response => {
-     console.log('Profile updated successfully:', response);
+     
      alert('Profile updated successfully.');
      this.isEditMode = false; // Exit edit mode
      const { password, ...safeData } = updatedProfile;
@@ -106,7 +73,7 @@ onSaveChanges() {
     }
     });
    } else {
-    console.log('Form is invalid');
+    
     alert("fill all fields")
    }
   }

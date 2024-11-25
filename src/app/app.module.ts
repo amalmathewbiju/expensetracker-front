@@ -11,6 +11,7 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { loadingInterceptor } from './loading.interceptor';
 import { LoadingService } from './loading.service';
 import { LoadingComponent } from './loading/loading.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,7 @@ import { LoadingComponent } from './loading/loading.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,AuthModule,DashboardModule
+    AppRoutingModule,AuthModule,DashboardModule,FormsModule
   ],
   providers: [
     provideAnimationsAsync(),
