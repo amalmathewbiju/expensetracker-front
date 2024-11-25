@@ -33,10 +33,12 @@ export class RegisterComponent {
           console.log('User registered successfully', response);
           alert("Successfully registered");
           this.router.navigate(['/auth/login']);
+        }, error => {
+          console.error('Error registering user:', error);
         });
       }
     }, error => {
-      console.error('Error checking username:', error); // Log any errors
+      console.error('Error checking username:', error);
     });
   }
 }  

@@ -29,9 +29,9 @@ export class ProfileComponent implements OnInit {
  initializeForm() {
  this.profileForm = this.fb.group({
   userName: [{ value: this.currentUser.userName, disabled: true }],
-  name: [this.currentUser.name, [Validators.required]],
-  email: [this.currentUser.email, [Validators.required, Validators.email]],
-  password: [this.currentUser.password, [Validators.required, Validators.minLength(6)]]
+  name: [this.currentUser.name, ],
+  email: [this.currentUser.email, [Validators.email]],
+  password: [this.currentUser.password, [ Validators.minLength(6)]]
  });
  }
 
@@ -73,7 +73,7 @@ export class ProfileComponent implements OnInit {
 // }
 onSaveChanges() {
  console.log('Save Changes button clicked');
-  alert('Profile updated successfully.');
+
  console.log('Form Valid:', this.profileForm.valid);
    console.log('Form Value:', this.profileForm.value);
   
@@ -107,6 +107,7 @@ onSaveChanges() {
     });
    } else {
     console.log('Form is invalid');
+    alert("fill all fields")
    }
   }
   

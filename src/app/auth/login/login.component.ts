@@ -21,22 +21,27 @@ export class LoginComponent {
     });
   }
   onSubmit() {
-    const { userName, password } = this.loginForm.value;
-    this.authService.login(userName, password).subscribe(users => {
-      if (users.length > 0) {
-        const userToStore = {
-          _id: users[0]._id,  // Ensure ID is saved
-          userName: users[0].userName,
-          name: users[0].name
-        };
-        localStorage.setItem('currentUser', JSON.stringify(userToStore));
-        this.router.navigate(['/dashboard/dashboard']);  
-      } else {
-        this.loginFailed = true;
-      }
-    }, error => {
-      console.error('Login error:', error);
-      this.loginFailed = true;
-    });
-  }  
+      const { userName, password } = this.loginForm.value;
+    
+      this.authService.login(userName, password).subscribe(response => {
+        if (response.token) {
+          const userToStore = {
+            _id: response.user._id, // Ensure ID is saved
+            userName: response.user.userName,
+            name: response.user.name,
+            token: response.token // Store the token
+          };
+    
+          localStorage.setItem('currentUser', JSON.stringify(userToStore));
+          localStorage.setItem('isLoggedIn', 'true'); // Set login status
+          this.router.navigate(['/dashboard/dashboard']);
+        } else {
+          this.loginFailed = true;
+        }
+      }, error => {
+        console.error('Login error:', error);
+        this.loginFailed = true;
+      });
+    }
+    
 }  

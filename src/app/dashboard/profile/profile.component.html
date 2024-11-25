@@ -2,46 +2,22 @@
   <h2>User Profile</h2>
   <form [formGroup]="profileForm">
     <div class="form-group">
-      <label for="userName">Username</label>
-      <input
-        id="userName"
-        formControlName="userName"
-        type="text"
-        class="form-control"
-         />
-    </div>
-    <div class="form-group">
       <label for="name">Name</label>
-      <input
-        id="name"
-        formControlName="name"
-        type="text"
-        class="form-control"
-        [readonly]="!isEditMode" />
+      <input id="name" formControlName="name" type="text" class="form-control" [readonly]="!isEditMode" />
     </div>
     <div class="form-group">
       <label for="email">Email</label>
-      <input
-        id="email"
-        formControlName="email"
-        type="email"
-        class="form-control"
-        [readonly]="!isEditMode" />
+      <input id="email" formControlName="email" type="email" class="form-control" [readonly]="!isEditMode" />
     </div>
     <div class="form-group">
       <label for="password">Password</label>
-      <input
-        id="password"
-        formControlName="password"
-        type="password"
-        class="form-control"
-        [readonly]="!isEditMode" />
+      <input id="password" formControlName="password" type="password" class="form-control" [readonly]="!isEditMode" />
     </div>
     <div class="form-buttons">
       <button type="button" class="btn btn-primary" (click)="toggleEditMode()">
         {{ isEditMode ? 'Cancel' : 'Edit Profile' }}
       </button>
-      <button type="button" class="btn btn-success" (click)="onSaveChanges()" *ngIf="isEditMode" >
+      <button type="button" class="btn btn-success" (click)="onSaveChanges()" *ngIf="isEditMode">
         Save Changes
       </button>
       <button type="button" class="btn btn-danger" (click)="onDeleteAccount()">
@@ -49,6 +25,7 @@
       </button>
     </div>
   </form>
+  
 </div>
 <div class="center-button-container">
   <button routerLink="/dashboard/dashboard">Dashboard</button>
